@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userEmail = urlParams.get('email');
+        const planoEscolhido = urlParams.get('plano');
+        const priceIdMensal = 'price_1TXpD8JVDeGOx1BElQ8QO5RF';
+        const priceIdAnual = 'price_1TXpEQJVDeGOx1BE2kphK97h';
+        let priceId = null;
+        if (planoEscolhido === 'mensal') {
+            priceId = priceIdMensal;
+        }
+        if (planoEscolhido === 'anual') {
+            priceId = priceIdAnual;
+        }
+        if (!userEmail || !priceId) {
+            window.location.href = '/';
+        }
+        function redirectToStripeCheckout(email) {
+            const stripe = Stripe('pk_test_51H8nFSJVDeGOx1BE0FnEeujSVTeUTzELHWZareDBpG9Bb4vt9djXeMHIVlpPe3dTMpfBBEF75zWOpb5STqNUYXUJ00FykAJCjp');
+            stripe.redirectToCheckout({
+                lineItems: [{ price: priceId, quantity: 1 }],
+                mode: 'subscription',
+                customerEmail: userEmail,
+                successUrl: 'https://landowski.github.io/atendezap/ok.html',
+                cancelUrl: 'https://landowski.github.io/atendezap/',
+            });
+        }
+    </script>
+</body>
+</html>

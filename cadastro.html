@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro – Atendezap</title>
+  <link rel="stylesheet" href="css/login.css">
+  <link rel="icon" href="img/icone.svg" type="image/svg+xml">
+</head>
+<body>
+  <div id="content">
+        <div class="container-login">
+            <a href="index.html" class="logo" style="margin-bottom: 40px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b77f"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
+                <span style="font-size: 27px; font-weight: 700; color: #10b77f">Atendezap</span>
+            </a>
+            <div id="popLogin">
+                <div class="login-container">
+                    <form id="login-form">
+                        <input class="input-login" type="email" id="login-email" placeholder="E-mail" required>
+                        <div class="pass-group">
+                            <input class="input-login" type="password" id="login-password" placeholder="Senha" required>
+                            <div id="btnToggle" class="toggle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-.722-3.25"/><path d="M2 8a10.645 10.645 0 0 0 20 0"/><path d="m20 15-1.726-2.05"/><path d="m4 15 1.726-2.05"/><path d="m9 18 .722-3.25"/></svg>
+                            </div>
+                        </div>
+                        <input class="input-login" type="password" id="login-password-repeat" placeholder="Repita a senha" required>
+                        <button type="submit" id="botaoCadastro">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="conta" style="margin-top: 40px;">
+                <span>Já tem uma conta? <a href="entrar.html">ENTRE</a></span>
+            </div>
+        </div>
+  </div>
+  <script src="firebase/firebase-app.js"></script>
+  <script src="firebase/firebase-auth.js"></script>
+  <script src="firebase/firebase-firestore.js"></script>
+  <script src="firebase/firebase-config.js"></script>
+  <script src="js/cadastro.js"></script>
+</body>
+</html>
