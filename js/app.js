@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputTrocaEmail = document.getElementById('inputTrocaEmail');
     const solicitarTrocaEmail = document.getElementById('solicitarTrocaEmail');
     const solicitarTrocaSenha = document.getElementById('solicitarTrocaSenha');
+    const gerenciarAssinatura = document.getElementById('gerenciarAssinatura');
     if (sitesBtn) sitesBtn.addEventListener("click", () => showPage("home"));
     if (ajudaBtn) ajudaBtn.addEventListener("click", () => showPage("ajuda"));
     if (contaBtn) contaBtn.addEventListener("click", () => showPage("conta"));
@@ -112,6 +113,10 @@ document.addEventListener("DOMContentLoaded", () => {
         toast("Erro ao enviar:", error);
       });
     });
+    gerenciarAssinatura.addEventListener('click', () => {
+      const stripeUrl = `https://billing.stripe.com/p/login/test_4gwcPwafj78x9QA144?prefilled_email=${encodeURIComponent(user.email)}`;
+      window.open(stripeUrl, "_blank");
+      });
     sairBtn.addEventListener("click", async () => {
       await auth.signOut();
       window.location.href = "entrar.html";
