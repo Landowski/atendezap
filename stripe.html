@@ -13,7 +13,7 @@ const uid = urlParams.get('uid');
 const email = urlParams.get('email');
 const plano = urlParams.get('plano');
 if (!uid || !email || !plano) {
-window.location.href = '/atendezap';
+window.location.href = 'index';
 }
 fetch('https://6t5cnf00xg.execute-api.us-east-1.amazonaws.com/atendezap-checkout/', {
 method: 'POST',
@@ -25,11 +25,11 @@ body: JSON.stringify({ uid, email, plano })
 if (data.url) {
 window.location.href = data.url;
 } else {
-window.location.href = '/atendezap';
+window.location.href = 'app';
 }
 })
 .catch(() => {
-window.location.href = '/atendezap';
+window.location.href = 'teste';
 });
 </script>
 </body>
