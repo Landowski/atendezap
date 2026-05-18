@@ -21,7 +21,7 @@ box-sizing: border-box;
 overflow: hidden;
 font-family: var(--font);
 font-size: 15px;
-background-color: #fff;
+background-color: #fafafa;
 color: var(--black);
 }
 

@@ -1,79 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="robots" content="noindex, nofollow">
-        <title>Assinatura Atendezap</title>
-        <link rel="stylesheet" href="css/app.css">
-        <link rel="icon" href="img/icone.svg" type="image/svg+xml">
-    </head>
-
-    <body>
-
-        <div id="wall"></div>
-
-        <header class="app-header" style="justify-content: center;">
-            <div class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
-                <span>Atendezap</span>
-            </div>
-        </header>
-
-        <main id="main" style="display: flex; justify-content: center;">
-
-            <section class="page active">
-                <div class="title-button-container" style="justify-content: center;">
-                    <h1>Assinatura</h1>
-                </div>
-                <div class="site-name-card" style="width: fit-content; max-width: 530px; user-select: none;">
-                    <div style="display: flex; flex-direction: column; gap: 20px;">
-                        <span style="font-size: 26px; font-weight: 600; text-align: center;">Assinando o plano anual você ganha o DESCONTO de <b>2 (duas) mensalidades</b>!</span>
-                        <button id="planoAnual" class="botao-verde" style="font-weight: bold;">
-                            ASSINAR PLANO ANUAL <small>(R$ 499,90)</small>
-                        </button>
-                        <button id="planoMensal" class="botao-verde">
-                            Assinar plano mensal <small>(R$ 49,90)</small>
-                        </button>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-
-        <script src="firebase/firebase-app.js"></script>
-        <script src="firebase/firebase-auth.js"></script>
-        <script src="firebase/firebase-firestore.js"></script>
-        <script src="firebase/firebase-config.js"></script>
-        <script>
-            const db = firebase.firestore();
-            const auth = firebase.auth();
-            document.addEventListener("DOMContentLoaded", () => {
-                auth.onAuthStateChanged(async user => {
-                    if (!user) {
-                    window.location.href = "entrar.html";
-                    }
-                    const userRef = db.collection("usuarios").doc(user.uid);
-                    const userDoc = await userRef.get();
-                    const userData = userDoc.data();
-                    if (userData.assinante) {
-                        window.location.href = "app.html";
-                    }
-                    document.getElementById("wall").remove();
-                    document.getElementById('planoAnual').addEventListener('click', () => {
-                        const url = `stripe.html?email=${encodeURIComponent(user.email)}&plano=anual`;
-                        window.location.href = url;
-                    });
-                    document.getElementById('planoMensal').addEventListener('click', () => {
-                        const url = `stripe.html?email=${encodeURIComponent(user.email)}&plano=mensal`;
-                        window.location.href = url;
-                    });
-                });
-            });
-
-        </script>
-
-    </body>
-
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Assinatura Atendezap</title>
+<link rel="stylesheet" href="css/app.css">
+<link rel="icon" href="img/icone.svg" type="image/svg+xml">
+</head>
+<body>
+<div id="wall"></div>
+<header class="app-header" style="justify-content: center;">
+<div class="logo">
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
+<span>Atendezap</span>
+</div>
+</header>
+<main id="main" style="display: flex; justify-content: center;">
+<section class="page active">
+<div class="title-button-container" style="justify-content: center;">
+<h1>Assinatura</h1>
+</div>
+<div class="site-name-card" style="width: fit-content; max-width: 530px; user-select: none;">
+<div style="display: flex; flex-direction: column; gap: 20px;">
+<span style="font-size: 26px; font-weight: 600; text-align: center;">Assinando o plano anual você ganha o DESCONTO de <b>2 (duas) mensalidades</b>!</span>
+<button id="planoAnual" class="botao-verde" style="font-weight: bold;">
+ASSINAR PLANO ANUAL <small>(R$ 499,90)</small>
+</button>
+<button id="planoMensal" class="botao-verde">
+Assinar plano mensal <small>(R$ 49,90)</small>
+</button>
+</div>
+</div>
+</section>
+</main>
+<script src="firebase/firebase-app.js"></script>
+<script src="firebase/firebase-auth.js"></script>
+<script src="firebase/firebase-firestore.js"></script>
+<script src="firebase/firebase-config.js"></script>
+<script>
+const db = firebase.firestore();
+const auth = firebase.auth();
+document.addEventListener("DOMContentLoaded", () => {
+auth.onAuthStateChanged(async user => {
+if (!user) {
+window.location.href = "entrar.html";
+}
+const userRef = db.collection("usuarios").doc(user.uid);
+const userDoc = await userRef.get();
+const userData = userDoc.data();
+if (userData.assinante) {
+window.location.href = "app.html";
+}
+document.getElementById("wall").remove();
+document.getElementById('planoAnual').addEventListener('click', () => {
+const url = `stripe.html?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=anual`;
+window.location.href = url;
+});
+document.getElementById('planoMensal').addEventListener('click', () => {
+const url = `stripe.html?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=mensal`;
+window.location.href = url;
+});
+});
+});
+</script>
+</body>
 </html>
