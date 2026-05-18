@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   auth.onAuthStateChanged(async user => {
     if (!user) {
-      window.location.href = "entrar.html";
+      window.location.href = "entrar";
     }
     const userRef = db.collection("usuarios").doc(user.uid);
     const userDoc = await userRef.get();
       if (!userDoc.exists) {
-      window.location.href = "entrar.html";
+      window.location.href = "entrar";
     }
     const userData = userDoc.data();
     const agora = new Date();
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const diasPassados = Math.floor((agora - trialInicio) / (1000 * 60 * 60 * 24));
       const diasRestantes = 15 - diasPassados;
       if (diasRestantes <= 0) {
-        window.location.href = "assinatura.html";
+        window.location.href = "assinatura";
       }
       mostrarBarraTrial(diasRestantes);
     }
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
         background: ${dias <= 3 ? '#ef4444' : dias <= 7 ? '#f59e0b' : '#27d369'};
         color: #fff;
       `;
-      barra.innerHTML = `Seu trial termina em <strong>${dias} dia${dias !== 1 ? 's' : ''}</strong>. <a href="assinatura.html" style="color: #fff; text-decoration: underline; font-size: 15px;">Assinar agora</a>`;
+      barra.innerHTML = `Seu trial termina em <strong>${dias} dia${dias !== 1 ? 's' : ''}</strong>. <a href="assinatura" style="color: #fff; text-decoration: underline; font-size: 15px;">Assinar agora</a>`;
       document.body.prepend(barra);
     }
     const listaSitesEl = document.getElementById("listaSites");
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     sairBtn.addEventListener("click", async () => {
       await auth.signOut();
-      window.location.href = "entrar.html";
+      window.location.href = "entrar";
     });
 
     ////////// SITES //////////

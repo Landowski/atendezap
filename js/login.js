@@ -21,7 +21,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
             botaoLogin.innerHTML = '<img src="img/carregando.svg" width="18" height="18"/>'
             botaoLogin.style.cursor = 'auto';
             setTimeout(function() {
-                window.location.href = 'app.html';
+                window.location.href = 'app';
             }, 1500);
         })
         .catch((error) => {

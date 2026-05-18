@@ -53,7 +53,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
         })
         .then(() => {
             setTimeout(function() {
-                window.location.href = 'app.html';
+                window.location.href = 'app';
             }, 1500);
         })
         .catch((erro) => {

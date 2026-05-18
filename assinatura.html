@@ -44,21 +44,21 @@ const auth = firebase.auth();
 document.addEventListener("DOMContentLoaded", () => {
 auth.onAuthStateChanged(async user => {
 if (!user) {
-window.location.href = "entrar.html";
+window.location.href = "entrar";
 }
 const userRef = db.collection("usuarios").doc(user.uid);
 const userDoc = await userRef.get();
 const userData = userDoc.data();
 if (userData.assinante) {
-window.location.href = "app.html";
+window.location.href = "app";
 }
 document.getElementById("wall").remove();
 document.getElementById('planoAnual').addEventListener('click', () => {
-const url = `stripe.html?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=anual`;
+const url = `stripe?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=anual`;
 window.location.href = url;
 });
 document.getElementById('planoMensal').addEventListener('click', () => {
-const url = `stripe.html?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=mensal`;
+const url = `stripe?uid=${user.uid}&email=${encodeURIComponent(user.email)}&plano=mensal`;
 window.location.href = url;
 });
 });
