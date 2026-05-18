@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!userData.assinante) {
       const trialInicio = userData.trialInicio?.toDate();
       const diasPassados = Math.floor((agora - trialInicio) / (1000 * 60 * 60 * 24));
-      const diasRestantes = 15 - diasPassados;
+      const diasRestantes = 3 - diasPassados;
       if (diasRestantes <= 0) {
         window.location.href = "assinatura";
       }
