@@ -112,7 +112,7 @@ toast("Erro ao enviar:", error);
 });
 });
 gerenciarAssinatura.addEventListener('click', () => {
-const stripeUrl = `https://billing.stripe.com/p/login/test_4gwcPwafj78x9QA144?prefilled_email=${encodeURIComponent(user.email)}`;
+const stripeUrl = `https://billing.stripe.com/p/login/dR63egdBu2qnfwkbII?prefilled_email=${encodeURIComponent(user.email)}`;
 window.open(stripeUrl, "_blank");
 });
 sairBtn.addEventListener("click", async () => {
