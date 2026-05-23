@@ -522,7 +522,7 @@ renderizarGrafico(e.target.value);
 });
 ////////// CÓDIGO DE INCORPORAÇÃO DO WIDGET //////////
 const codigoWidget = `
-&lt;script src="js/atendezap-botao.js" data-site-id="${site.id}"&gt;&lt;/script&gt;`;
+&lt;script src="https://suportezap.com.br/js/suportezap-botao.js" data-site-id="${site.id}"&gt;&lt;/script&gt;`;
 const codeBlock = document.getElementById("code");
 codeBlock.innerHTML = codigoWidget;
 const botaoCopiar = document.querySelector(".botao-copiar");
