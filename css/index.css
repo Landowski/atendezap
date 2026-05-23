@@ -462,3 +462,188 @@ opacity: 1;
 transform: translateY(0);
 }
 }
+
+@media (max-width: 860px) {
+    .container {
+        gap: 90px;
+    }
+ 
+    h1 {
+        font-size: 3.2rem;
+    }
+ 
+    h2 {
+        font-size: 2.2rem;
+    }
+ 
+    h3 {
+        font-size: 1.9rem;
+    }
+ 
+    .container-esquerda-direita {
+        flex-direction: column;
+        gap: 40px;
+    }
+ 
+    /* Seções com imagem: imagem depois do texto */
+    .container-esquerda-direita > .dentro-esquerda-direita:has(img) {
+        order: 2;
+    }
+ 
+    /* Cards de feature: linha com 2 por row */
+    .apoio-card {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+ 
+    .apoio-card .dentro-esquerda-direita {
+        flex: 1 1 calc(50% - 20px);
+        min-width: 200px;
+    }
+ 
+    .card {
+        max-width: 100%;
+    }
+ 
+    .card-preco {
+        max-width: 100%;
+    }
+ 
+    .card-faq {
+        width: 90%;
+    }
+ 
+    /* Widgets flutuantes: ocultar no tablet/mobile pois são decorativos */
+    .atendezap-widget2,
+    .atendezap-widget3 {
+        display: none;
+    }
+ 
+    .atendezap-widget {
+        position: static;
+        animation: none;
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+ 
+    .chamada-fim {
+        background-size: 0;
+    }
+}
+
+@media (max-width: 600px) {
+body {
+padding: 16px;
+}
+
+.container {
+gap: 70px;
+}
+
+h1 {
+font-size: 2.4rem;
+}
+
+h2 {
+font-size: 1.75rem;
+}
+
+h3 {
+font-size: 1.5rem;
+}
+
+h4 {
+font-size: 1.3rem;
+}
+
+p {
+font-size: 1.1rem;
+}
+
+/* Header: logo + hambúrguer seria ideal, mas sem JS extra
+optamos por empilhar logo acima e menu abaixo */
+.header {
+flex-direction: column;
+align-items: flex-start;
+gap: 16px;
+}
+
+.menu {
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.menu a {
+font-size: 0.95rem;
+}
+
+/* Cards de feature: coluna única */
+.apoio-card {
+flex-direction: column;
+}
+
+.apoio-card .dentro-esquerda-direita {
+flex: 1 1 100%;
+}
+
+.card {
+max-width: 100%;
+}
+
+.card-preco {
+max-width: 100%;
+padding: 24px;
+}
+
+.card-faq {
+width: 100%;
+}
+
+/* Botão hero */
+.apoio-botao-verde {
+width: 100%;
+text-align: center;
+font-size: 1rem;
+padding: 14px 20px;
+}
+
+/* Seção hero: widget decorativo oculto */
+.atendezap-widget {
+display: none;
+}
+
+/* Chamada fim */
+.chamada-fim {
+padding: 32px 20px;
+background-size: 0;
+}
+
+.chamada-fim h2 {
+font-size: 1.6rem;
+}
+
+.botao-fim {
+font-size: 1.1rem;
+padding: 16px 24px;
+}
+
+/* Footer */
+.footer {
+flex-direction: column;
+gap: 16px;
+align-items: flex-start;
+}
+
+.menu-footer {
+flex-wrap: wrap;
+gap: 14px;
+}
+
+/* Cookie banner */
+.cookie-banner {
+left: 12px;
+right: 12px;
+max-width: unset;
+bottom: 12px;
+}
+}
