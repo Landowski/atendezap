@@ -480,6 +480,10 @@ h3 {
 font-size: 1.9rem;
 }
 
+.atendezap-widget-index, .atendezap-widget-index-2, atendezap-widget-index-3 {
+display: none !important;
+}
+  
 .container-esquerda-direita {
 flex-direction: column;
 gap: 40px;
@@ -489,7 +493,6 @@ gap: 40px;
 order: 2;
 }
 
-/* Cards de feature: linha com 2 por row */
 .apoio-card {
 flex-direction: row;
 flex-wrap: wrap;
@@ -531,6 +534,10 @@ padding: 16px;
 
 .container {
 gap: 70px;
+}
+
+.atendezap-widget-index, .atendezap-widget-index-2, atendezap-widget-index-3 {
+display: none !important;
 }
 
 h1 {
