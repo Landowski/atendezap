@@ -4,11 +4,9 @@
 --main-dark: #0fa573;
 --black: #212121;
 }
-
 * {
 box-sizing: border-box;
 }
-
 html, body {
 display: flex;
 align-items: center;
@@ -24,21 +22,25 @@ font-size: 15px;
 background-color: #fafafa;
 color: var(--black);
 }
-
+a {
+color: var(--main);
+text-decoration: none;
+}
+a:hover {
+text-decoration: underline;
+}
 #content {
 display: flex;
 justify-content: center;
 align-items: center;
 height: 100%;
 }
-
 .container-login {
 width: 340px;
 height: auto;
 display: flex;
 flex-direction: column;
 }
-
 .logo {
 display: flex;
 width: fit-content;
@@ -51,20 +53,17 @@ font-weight: 700;
 align-self: center;
 gap: 3px;
 }
-
 #popLogin {
 display: flex;
 flex-direction: column;
 gap: 20px;
 }
-
 #login-form {
 display: flex;
 width: 100%;
 flex-direction: column;
 gap: 20px;
 }
-
 .login-container button {
 width: 100%;
 display: flex;
@@ -81,11 +80,9 @@ color: #fff;
 letter-spacing: 1px;
 font-weight: 600;
 }
-
 .login-container button:hover {
 background-color: var(--main-dark);
 }
-
 .input-login {
 width: 100%;
 border: 1px solid #ddd;
@@ -97,38 +94,30 @@ font-family: var(--font);
 font-size: 15px;
 color: var(--black);
 }
-
 .input-login:hover {
 border-color: var(--main);
 }
-
 .input-login:focus {
 border-color: var(--main-dark);
 }
-
 .input-login::placeholder {
 color: #aaa;
 }
-
 .input-login:focus::placeholder {
 color: transparent;
 }
-
 #textoEsqueci {
 color: #999;
 text-decoration: none;
 cursor: pointer;
 text-decoration: none;
 }
-
 #textoEsqueci:hover {
 color: var(--main) !important;
 }
-
 .pass-group {
 position: relative;
 }
-
 .toggle {
 cursor: pointer;
 display: flex;
@@ -141,15 +130,12 @@ top: 13px;
 right: 8px;
 color: #999;
 }
-
 .toggle:hover {
 color: var(--main-dark);
 }
-
 input[type="password"]::-ms-reveal {
 display: none;
 }
-
 .conta {
 display: flex;
 height: fit-content;
@@ -158,18 +144,15 @@ justify-content: center;
 color: var(--black);
 gap: 3px;
 }
-
 .conta a {
 font-weight: 600;
 text-decoration: none;
 color: var(--black);
 }
-
 .conta a:hover {
 color: var(--main);
-text-decoration: 2px underline;
+text-decoration: underline;
 }
-
 #noti {
 visibility: hidden;
 width: max-content;
@@ -194,13 +177,11 @@ transform: translate(-50%, -50%);
 opacity: 0;
 animation: slideIn .3s forwards;
 }
-
 #noti.show {
 box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px 0px;
 visibility: visible;
 opacity: 1;
 }
-
 @keyframes slideIn {
 from { bottom: -200px; opacity: 0; } 
 to { bottom: 0px; opacity: 1; }
