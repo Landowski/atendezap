@@ -495,7 +495,6 @@ align-items: center;
 justify-content: center;
 box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 8px;
 cursor: pointer;
-z-index: 99999;
 position: relative;
 transition: all 0.45s ease;
 }
