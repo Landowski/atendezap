@@ -288,23 +288,23 @@ color: #999;
 font-size: 1rem;
 }
 
-.atendezap-widget, .atendezap-widget2, .atendezap-widget3 {
+.atendezap-widget-index, .atendezap-widget-index-2, .atendezap-widget-index-3 {
 position: absolute;
 }
 
-.atendezap-widget {
+.atendezap-widget-index {
 left: 40px;
 top: 100px;
 animation: float 1.5s ease-in-out infinite alternate;
 }
 
-.atendezap-widget2 {
+.atendezap-widget-index-2 {
 left: 200px;
 top: 300px;
 animation: float2 1.1s ease-in-out infinite alternate;
 }
 
-.atendezap-widget3 {
+.atendezap-widget-index-3 {
 right: 40px;
 top: 220px;
 animation: float3 2s ease-in-out infinite alternate;
@@ -325,7 +325,7 @@ from { transform: translateY(0px); }
 to { transform: translateY(-30px); }
 }
 
-.atendezap-button {
+.atendezap-button-index {
 width: 56px;
 height: 56px;
 background: #27d369;
@@ -344,11 +344,11 @@ transition: all 0.45s ease;
 background: #4727d3 !important;
 }
 
-.atendezap-button.purple::after {
+.atendezap-button-index.purple::after {
 border-top-color: #4727d3 !important;
 }
 
-.atendezap-button.orange::after {
+.atendezap-button-index.orange::after {
 border-top-color: #ff9e2f !important;
 }
 
@@ -357,7 +357,7 @@ background: #ff9e2f !important;
 color: #5e3200 !important;
 }
 
-.atendezap-button::after {
+.atendezap-button-index::after {
 content: '';
 position: absolute;
 width: 62px;
@@ -371,7 +371,7 @@ left: 50%;
 transform: translate(-50%, -50%) rotate(0deg);
 }
 
-.atendezap-widget .atendezap-button::after, .atendezap-widget2 .atendezap-button::after, .atendezap-widget3 .atendezap-button::after {
+.atendezap-widget-index .atendezap-button-index::after, .atendezap-widget-index-2 .atendezap-button-index::after, .atendezap-widget-index-3 .atendezap-button-index::after {
 animation: ringAnim 1.4s ease forwards infinite;
 }
 
@@ -381,7 +381,7 @@ animation: ringAnim 1.4s ease forwards infinite;
 100% { transform: translate(-50%, -50%) rotate(720deg); }
 }
 
-.atendezap-tooltip {
+.atendezap-tooltip-index {
 position: absolute;
 top: -25px;
 display: flex;
@@ -398,23 +398,23 @@ box-shadow: 0 1px 11px rgba(0, 0, 0, 0.15);
 user-select: none;
 }
 
-.atendezap-widget .atendezap-tooltip, .atendezap-widget2 .atendezap-tooltip, .atendezap-widget3 .atendezap-tooltip {
+.atendezap-widget-index .atendezap-tooltip-index, .atendezap-widget-index-2 .atendezap-tooltip-index, .atendezap-widget-index-3 .atendezap-tooltip-index {
 border-bottom-right-radius: 10px;
 border-top-right-radius: 10px;
 border-top-left-radius: 10px;
 }
 
-.atendezap-widget .atendezap-tooltip {
+.atendezap-widget-index .atendezap-tooltip-index {
 left: 63px;
 }
 
-.atendezap-widget2 .atendezap-tooltip {
+.atendezap-widget-index-2 .atendezap-tooltip-index {
 left: -183px;
 border-bottom-right-radius: 0px !important;
 border-bottom-left-radius: 10px;
 }
 
-.atendezap-widget3 .atendezap-tooltip {
+.atendezap-widget-index-3 .atendezap-tooltip-index {
 left: 63px;
 }
 
