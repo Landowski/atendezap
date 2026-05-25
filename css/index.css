@@ -548,6 +548,10 @@ min-width: 200px;
 max-width: 100%;
 }
 
+.grid-casos {
+grid-template-columns: repeat(2, 1fr);
+}
+
 .card-preco {
 max-width: 100%;
 }
@@ -627,6 +631,10 @@ flex: 1 1 100%;
 .card {
 max-width: 100%;
 }
+
+.grid-casos {
+ grid-template-columns: 1fr;
+ }
 
 .card-preco {
 max-width: 100%;
